@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "jest",
-    "start": "babel-node src/index.js",
+    "start": "babel-node src/index.ts",
     "lint": "eslint ."
   },
   "author": "Baptiste Lecocq <baptiste.lecocq@gmail.com> (https://tiste.io)",
