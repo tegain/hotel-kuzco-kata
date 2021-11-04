@@ -1,6 +1,6 @@
-import { Chambre } from './chambre';
+import { Chambre } from '../domain/chambre';
 import { RecupererChambres } from "./recuperer-chambres"
-import { StaticChambreRepository } from '../serverSide/staticChambreRepository';
+import { StaticChambreRepository } from '../../serverSide/staticChambreRepository';
 
 describe('Récupérer la liste des chambres', () => {
   it('récupère la liste des chambres', () => {

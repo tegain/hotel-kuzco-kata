@@ -1,4 +1,4 @@
-import { Chambre } from '../../hexagon/chambre'
+import { Chambre } from '../../hexagon/domain/chambre'
 
 export const chambresFakeData = [
   new Chambre(1, 101, 'one king size bed', '2 guests'),
@@ -7,7 +7,7 @@ export const chambresFakeData = [
 ]
 
 export class ChambreFactory {
-  static create (params?: Partial<Chambre>): Chambre {
+  static create(params?: Partial<Chambre>): Chambre {
     return new Chambre(
       params?.etage || 1,
       params?.chambre || 101,

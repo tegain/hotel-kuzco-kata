@@ -1,5 +1,5 @@
-import { Chambre } from "../hexagon/chambre";
-import { ChambreRepository } from "../hexagon/chambreRepository";
+import { Chambre } from "../hexagon/domain/chambre";
+import { ChambreRepository } from "../hexagon/domain/chambreRepository";
 
 export class StaticChambreRepository implements ChambreRepository {
   recupererToutesLesChambres(): Chambre[] {

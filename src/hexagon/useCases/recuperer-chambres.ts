@@ -1,5 +1,5 @@
-import { ChambreRepository } from './chambreRepository';
-import { Chambre } from './chambre'
+import { ChambreRepository } from '../domain/chambreRepository';
+import { Chambre } from '../domain/chambre'
 
 export class RecupererChambres {
   constructor(public maSourceDeDonnees: ChambreRepository) {
