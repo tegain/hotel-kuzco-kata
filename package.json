@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "start": "babel-node src/index.ts",
     "lint": "eslint ."
   },

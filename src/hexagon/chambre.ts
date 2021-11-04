@@ -1,6 +1,4 @@
-export interface Chambre {
-  Etage: number;
-  Chambre: number;
-  Description: string;
-  Capacite: string;
+export class Chambre {
+  constructor(public etage: number, public chambre: number, public description: string, public capacite: string) {
+  }
 }
