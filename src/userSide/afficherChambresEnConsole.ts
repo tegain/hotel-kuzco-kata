@@ -1,4 +1,4 @@
-import { Chambre } from '../hexagon/chambre'
+import { Chambre } from '../hexagon/domain/chambre'
 
 export class AfficherChambresEnConsole {
 
