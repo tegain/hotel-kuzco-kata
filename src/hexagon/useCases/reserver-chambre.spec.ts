@@ -1,6 +1,6 @@
-import {Reservation} from '../domain/Reservation';
-import {StaticChambreRepository} from "../../serverSide/staticChambreRepository";
-import {ChambreRepository} from "../domain/chambreRepository";
+import { Reservation } from '../domain/Reservation';
+import { StaticChambreRepository } from "../../serverSide/staticChambreRepository";
+import { ChambreRepository } from "../domain/chambreRepository";
 import { StaticReservationRepository } from '../../serverSide/staticReservationRepository'
 import { ReservationRepository } from '../domain/reservationRepository'
 
@@ -8,7 +8,9 @@ class ReserverChambre {
 
   constructor(
     private chambreRepository: ChambreRepository,
-    private reservationRepository: ReservationRepository
+    private reservationRepository: ReservationRepository,
+    private notification: Notification,
+    private logger: Logger
   ) {
   }
 
@@ -23,7 +25,22 @@ class ReserverChambre {
     }
     const reservation = new Reservation(dateDebut, dateFin, nbVoyageurs, numeroChambre);
     this.reservationRepository.ajouterReservation(reservation);
+    this.envoyerEmailConfirmation("user@monapp.fr", "Confirmation de réservation", "blabla")
+    this.envoyerNotificationSlack("user@monapp.fr", "Confirmation de réservation", "blabla")
+    this.loggerLaReservation(reservation)
     return reservation;
+  }
+
+  envoyerEmailConfirmation() {
+    const estCorrectementEnvoyé = this.notification.envoyerEmail(destinataire, objet, contenu)
+  }
+
+  envoyerNotificationSlack() {
+    const estCorrectementEnvoyé = this.notification.envoyerSurSlack(destinataire, objet, contenu)
+  }
+
+  loggerLaReservation(reservation: Reservation) {
+    const estCorrectementLoggé = this.logger.logger(reservation)
   }
 }
 

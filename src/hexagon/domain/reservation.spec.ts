@@ -6,7 +6,7 @@ describe('Passer une reservation', () => {
     expect(reservation).toBeInstanceOf(Reservation)
   })
 
-  it('passer une réservation avec moins d\'une nuit renvoi une erreur', () => {
+  it('passer une réservation avec moins d\'une nuit renvoie une erreur', () => {
     expect(() => new Reservation("2021-11-05", "2021-11-05", 2, 101)).toThrowError()
   })
 })
